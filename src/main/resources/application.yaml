@@ -1,0 +1,22 @@
+
+server:
+    port: ${PORT:8761} # Cloud Run inyectará el puerto automáticamente
+
+spring:
+    application:
+      name: discovery-server
+
+eureka:
+    instance:
+      hostname: localhost
+    client:
+      register-with-eureka: false # No se registra sí mismo
+      fetch-registry: false      # No necesita buscar a otros
+      serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+management:
+    endpoints:
+      web:
+        exposure:
+          include: health, info
