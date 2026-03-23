@@ -1,5 +1,5 @@
 # Paso 1: Usar una imagen de Java ligera
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jre-jammy
 
 # Paso 2: Crear un directorio para la app
 WORKDIR /app
